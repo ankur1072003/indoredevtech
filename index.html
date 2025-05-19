@@ -8,7 +8,7 @@
     :root {
       --primary: #007BFF;
       --dark: #222831;
-      --light: #f8f9fa;
+      --light: rgba(255,255,255,0.85);
       --accent: #00adb5;
     }
 
@@ -21,9 +21,15 @@
     }
 
     body {
-      background-color: var(--light);
+      background: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
       color: var(--dark);
       line-height: 1.6;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 0;
     }
 
     header {
@@ -51,12 +57,21 @@
       text-decoration: none;
       margin: 0.5rem 1rem;
       font-weight: bold;
+      transition: 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      opacity: 0.85;
     }
 
     section {
       padding: 2rem 1rem;
       max-width: 1000px;
       margin: auto;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(4px);
     }
 
     .section-title {
@@ -74,22 +89,22 @@
 
     .service {
       flex: 1 1 250px;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 1.5rem;
       border-left: 4px solid var(--accent);
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border-radius: 5px;
+      backdrop-filter: blur(3px);
     }
 
     .cta {
       text-align: center;
-      background-color: var(--accent);
+      background: rgba(0, 173, 181, 0.9);
       padding: 2rem 1rem;
       color: white;
       margin-top: 2rem;
-    }
-
-    .cta h3 {
-      margin-bottom: 1rem;
+      border-radius: 15px;
+      backdrop-filter: blur(4px);
     }
 
     .cta a {
@@ -99,6 +114,11 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s ease-in-out;
+    }
+
+    .cta a:hover {
+      opacity: 0.85;
     }
 
     footer {
@@ -111,6 +131,28 @@
     footer a {
       color: var(--accent);
       text-decoration: underline;
+    }
+
+    /* WhatsApp Chat Icon */
+    .whatsapp-float {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
+      height: auto;
+      padding: 10px;
     }
 
     @media (max-width: 600px) {
@@ -129,64 +171,71 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>IndoreDevTech</h1>
-    <p>Empowering developers & AI innovators in the heart of Madhya Pradesh</p>
-  </header>
+  <div class="overlay">
+    <header>
+      <h1>IndoreDevTech</h1>
+      <p>Empowering developers & AI innovators in the heart of Madhya Pradesh</p>
+    </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#mission">Mission</a>
-    <a href="#services">Services</a>
-    <a href="#community">Community</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#mission">Mission</a>
+      <a href="#services">Services</a>
+      <a href="#community">Community</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <section id="about">
-    <h2 class="section-title">About Us</h2>
-    <p>IndoreDevTech is a growing AI-powered developer community based in Indore, focused on nurturing tech talent, fostering collaboration, and promoting innovation through events, mentoring, and open-source contributions.</p>
-  </section>
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <p>IndoreDevTech is a growing AI-powered developer community based in Indore, focused on nurturing tech talent, fostering collaboration, and promoting innovation through events, mentoring, and open-source contributions.</p>
+    </section>
 
-  <section id="mission">
-    <h2 class="section-title">Our Mission</h2>
-    <p>To create a thriving environment for developers and AI professionals in Indore by enabling knowledge sharing, networking, and opportunities to grow in the tech ecosystem.</p>
-  </section>
+    <section id="mission">
+      <h2 class="section-title">Our Mission</h2>
+      <p>To create a thriving environment for developers and AI professionals in Indore by enabling knowledge sharing, networking, and opportunities to grow in the tech ecosystem.</p>
+    </section>
 
-  <section id="services">
-    <h2 class="section-title">Services</h2>
-    <div class="services-grid">
-      <div class="service">
-        <h3>AI Development</h3>
-        <p>Training in machine learning, NLP, and building AI-powered applications.</p>
+    <section id="services">
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid">
+        <div class="service">
+          <h3>AI Development</h3>
+          <p>Training in machine learning, NLP, and building AI-powered applications.</p>
+        </div>
+        <div class="service">
+          <h3>Web Development</h3>
+          <p>Workshops and live projects on React, Node.js, and modern frameworks.</p>
+        </div>
+        <div class="service">
+          <h3>App Development</h3>
+          <p>Hands-on sessions on Android, Flutter, and cross-platform mobile tools.</p>
+        </div>
+        <div class="service">
+          <h3>Tech Events</h3>
+          <p>Tech talks, hackathons, and networking meetups focused on AI and dev tech.</p>
+        </div>
       </div>
-      <div class="service">
-        <h3>Web Development</h3>
-        <p>Workshops and live projects on React, Node.js, and modern frameworks.</p>
-      </div>
-      <div class="service">
-        <h3>App Development</h3>
-        <p>Hands-on sessions on Android, Flutter, and cross-platform mobile tools.</p>
-      </div>
-      <div class="service">
-        <h3>Tech Events</h3>
-        <p>Tech talks, hackathons, and networking meetups focused on AI and dev tech.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="community">
-    <h2 class="section-title">Community Highlights</h2>
-    <p>Over 1,000+ active members. We host monthly meetups, AI bootcamps, and collaborate with local startups and universities in Indore.</p>
-  </section>
+    <section id="community">
+      <h2 class="section-title">Community Highlights</h2>
+      <p>Over 1,000+ active members. We host monthly meetups, AI bootcamps, and collaborate with local startups and universities in Indore.</p>
+    </section>
 
-  <section class="cta" id="join">
-    <h3>Join IndoreDevTech Today</h3>
-    <a href="https://www.linkedin.com/company/indoredev-tech/about/?viewAsMember=true" target="_blank">Become a Member</a>
-  </section>
-  
-  <footer id="contact">
-    <p>Contact us: <a href="mailto:indoredevtech@gmail.com">indoredevtech@gmail.com</a></p>
-    <p>Follow us on <a href="https://www.linkedin.com/company/indoredev-tech/about/?viewAsMember=true" target="_blank">LinkedIn</a></p>
-  </footer>
+    <section class="cta" id="join">
+      <h3>Join IndoreDevTech Today</h3>
+      <a href="https://www.linkedin.com/company/indoredev-tech/about/?viewAsMember=true" target="_blank">Become a Member</a>
+    </section>
+
+    <footer id="contact">
+      <p>Contact us: <a href="mailto:indoredevtech@gmail.com">indoredevtech@gmail.com</a></p>
+      <p>Follow us on <a href="https://www.linkedin.com/company/indoredev-tech/about/?viewAsMember=true" target="_blank">LinkedIn</a></p>
+    </footer>
+  </div>
+
+  <!-- WhatsApp Icon -->
+  <a href="https://wa.me/917906922436" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp" />
+  </a>
 </body>
 </html>
